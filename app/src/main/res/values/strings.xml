@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">Android_1_05012021</string>
+    <string name="simple_text">Simple text</string>
+    <string name="input_name">Input Name</string>
+    <string name="button">Button</string>
+    <string name="switch1_name">Switch</string>
+    <string name="checkbox1_name">Night theme</string>
+    <string name="togglebutton1">Toggle Button</string>
+    <string name="text_off">OFF</string>
+    <string name="text_on">ON</string>
+    <string name="input_text">Input Text</string>
+    <string name="input_person_name">Input Person Name</string>
+    <string name="input_phone">Input Phone</string>
+    <string name="input_number">Input Number</string>
+    <string name="input_password">Input Password</string>
+    <string name="input_email_address">Input e-mail address</string>
 </resources>

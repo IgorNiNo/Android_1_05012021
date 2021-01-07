@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="padding">24dp</dimen>
+    <dimen name="textSize_middle">30sp</dimen>
+    <dimen name="padding_object">24dp</dimen>
+    <dimen name="buttonText_size">18sp</dimen>
+</resources>

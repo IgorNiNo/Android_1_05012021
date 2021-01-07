@@ -55,4 +55,11 @@
         android:inputType="textEmailAddress"
         android:hint="@string/input_email_address" />
 
+    <CalendarView
+        android:id="@+id/calendarView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxDate="03/31/2021"
+        android:minDate="10/01/2020" />
+
 </androidx.appcompat.widget.LinearLayoutCompat>

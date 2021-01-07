@@ -9,4 +9,10 @@
     <string name="togglebutton1">Кнопка-переключатель</string>
     <string name="text_off">ОТКЛ</string>
     <string name="text_on">ВКЛ</string>
+    <string name="input_text">Введите текст</string>
+    <string name="input_person_name">Введите ФИО</string>
+    <string name="input_phone">Введите номер телефона</string>
+    <string name="input_number">Введите число</string>
+    <string name="input_password">Введите пароль</string>
+    <string name="input_email_address">Введите электронный адрес</string>
 </resources>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Андроид_1_05012021</string>
+    <string name="simple_text">Простой текст</string>
+    <string name="input_name">Введите имя</string>
+    <string name="button">Кнопка</string>
+    <string name="switch1_name">Переключатель</string>
+    <string name="checkbox1_name">Ночная тема</string>
+    <string name="togglebutton1">Кнопка-переключатель</string>
+    <string name="text_off">ОТКЛ</string>
+    <string name="text_on">ВКЛ</string>
+</resources>

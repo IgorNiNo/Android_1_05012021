@@ -1,18 +1,81 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/padding"
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_gravity="center"
+        android:fontFamily="@font/aguafina_script"
+        android:padding="@dimen/padding_object"
+        android:text="@string/simple_text"
+        android:textAlignment="center"
+        android:textColor="@color/purple_700"
+        android:textSize="@dimen/textSize_middle"
+        android:textStyle="italic" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:ems="15"
+        android:gravity="center"
+        android:hint="@string/input_name"
+        android:inputType="textPersonName"
+        android:padding="@dimen/padding_object"
+        android:shadowColor="@color/teal_200"
+        android:textSize="@dimen/textSize_middle"
+        android:autofillHints="" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:backgroundTint="@color/teal_200"
+        android:padding="@dimen/padding_object"
+        android:text="@string/button"
+        android:textColor="@color/black"
+        android:textSize="@dimen/buttonText_size"
+        android:textStyle="bold" />
+
+    <Switch
+        android:id="@+id/switch1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:padding="@dimen/padding_object"
+        android:textSize="@dimen/textSize_middle"
+        android:text="@string/switch1_name"
+        tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+
+    <CheckBox
+        android:id="@+id/checkBox1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:padding="@dimen/padding_object"
+        android:text="@string/checkbox1_name"
+        android:textSize="@dimen/textSize_middle"
+        android:textStyle="italic" />
+
+    <ToggleButton
+        android:id="@+id/toggleButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:padding="@dimen/padding_object"
+        android:text="@string/togglebutton1"
+        android:textOff="@string/text_off"
+        android:textOn="@string/text_on"
+        android:textSize="@dimen/textSize_middle" />
+</androidx.appcompat.widget.LinearLayoutCompat>

@@ -1,5 +1,6 @@
 package com.example.android_1_05012021;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -7,10 +8,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import java.util.Locale;
-
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     Calculator calculator = new Calculator();
+    private final static String KEY_CALCULATOR = "KEY_CALCULATOR";
     private Button button0;
     private Button button1;
     private Button button2;
@@ -39,6 +39,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
         initViews();
         initButtonsClickListener();
+    }
+
+    @Override
+    protected void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putParcelable(KEY_CALCULATOR, calculator);
+    }
+
+    @Override
+    protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        calculator = savedInstanceState.getParcelable(KEY_CALCULATOR);
+        textViewNumber.setText(calculator.getTextResult());
     }
 
     // Инициализация пользовательских элементов

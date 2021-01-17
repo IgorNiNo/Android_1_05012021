@@ -1,9 +1,11 @@
 package com.example.android_1_05012021;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import java.util.Locale;
 
-class Calculator {
-
+class Calculator implements Parcelable {
     private String inputSimbol = "";
     private String textResult = "";
     private double number1;
@@ -11,6 +13,54 @@ class Calculator {
     private double result;
     private int ariphmeticOperationCode;
     private int indexStartNum2;
+
+    public Calculator() {
+        this.inputSimbol = "";
+        this.textResult = "";
+        this.number1 = 0.0;
+        this.number2 = 0.0;
+        this.result = 0.0;
+        this.ariphmeticOperationCode = 0;
+        this.indexStartNum2 = 0;
+    }
+
+    protected Calculator(Parcel in) {
+        inputSimbol = in.readString();
+        textResult = in.readString();
+        number1 = in.readDouble();
+        number2 = in.readDouble();
+        result = in.readDouble();
+        ariphmeticOperationCode = in.readInt();
+        indexStartNum2 = in.readInt();
+    }
+
+    public static final Creator<Calculator> CREATOR = new Creator<Calculator>() {
+        @Override
+        public Calculator createFromParcel(Parcel in) {
+            return new Calculator(in);
+        }
+
+        @Override
+        public Calculator[] newArray(int size) {
+            return new Calculator[size];
+        }
+    };
+
+    @Override
+    public void writeToParcel(Parcel parcel, int i) {
+        parcel.writeString(inputSimbol);
+        parcel.writeString(textResult);
+        parcel.writeDouble(number1);
+        parcel.writeDouble(number2);
+        parcel.writeDouble(result);
+        parcel.writeInt(ariphmeticOperationCode);
+        parcel.writeInt(indexStartNum2);
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
 
     void setInputSimbol(String simbol) {
         this.inputSimbol = simbol;
@@ -23,7 +73,7 @@ class Calculator {
 
     // Анализ введенного символа
     private void analizeInputSimbol(String simbol) {
-        switch (simbol){
+        switch (simbol) {
             case ("0"):
             case ("1"):
             case ("2"):
@@ -37,19 +87,19 @@ class Calculator {
                 inputDigit(simbol);
                 break;
             case ("%"): // Нажата клавиша "процент"
-                inputOperation("%",1);
+                inputOperation("%", 1);
                 break;
             case ("+"): // Нажата клавиша "плюс"
-                inputOperation("+",2);
+                inputOperation("+", 2);
                 break;
             case ("-"): // Нажата клавиша "минус"
-                inputOperation("-",3);
+                inputOperation("-", 3);
                 break;
             case ("×"): // Нажата клавиша "умножение"
-                inputOperation("×",4);
+                inputOperation("×", 4);
                 break;
             case ("÷"): // Нажата клавиша "деление"
-                inputOperation("÷",5);
+                inputOperation("÷", 5);
                 break;
             case ("."): // Нажата клавиша "десятичный разделитель"
                 inputComma();
@@ -65,6 +115,8 @@ class Calculator {
                 break;
             case ("="): // Нажата клавиша "равно"
                 getResult();
+                break;
+            default:
                 break;
         }
     }
@@ -89,7 +141,7 @@ class Calculator {
         }
     }
 
-    // Считаем (нажали "=")
+    // Получаем результат (нажали "=")
     private void getResult() {
         if (searchSimbolEqual()) {
             clearTextResult();

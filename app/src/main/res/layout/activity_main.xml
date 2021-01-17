@@ -8,12 +8,17 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
+        android:id="@+id/textViewNumber"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/button_margin"
         android:layout_marginTop="@dimen/margin_top"
+        android:layout_marginEnd="@dimen/button_margin"
+        android:background="@color/white"
         android:ems="15"
-        android:textSize="@dimen/button_text_size"
+        android:gravity="end"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -33,7 +38,7 @@
         app:layout_constraintEnd_toStartOf="@+id/button_signChange"
         app:layout_constraintHorizontal_weight="1"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/textViewNumber"
         app:layout_constraintVertical_weight="1" />
 
     <Button
@@ -50,7 +55,7 @@
         app:layout_constraintEnd_toStartOf="@+id/button_percent"
         app:layout_constraintHorizontal_weight="1"
         app:layout_constraintStart_toEndOf="@+id/button_esc"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/textViewNumber"
         app:layout_constraintVertical_weight="1" />
 
     <Button
@@ -67,7 +72,7 @@
         app:layout_constraintEnd_toStartOf="@+id/button_delete"
         app:layout_constraintHorizontal_weight="1"
         app:layout_constraintStart_toEndOf="@+id/button_signChange"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/textViewNumber"
         app:layout_constraintVertical_weight="1" />
 
     <Button
@@ -84,7 +89,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_weight="1"
         app:layout_constraintStart_toEndOf="@+id/button_percent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/textViewNumber"
         app:layout_constraintVertical_weight="1" />
 
     <Button

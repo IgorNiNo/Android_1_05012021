@@ -10,6 +10,7 @@ import android.widget.TextView;
 import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+    Calculator calculator = new Calculator();
     private Button button0;
     private Button button1;
     private Button button2;
@@ -31,11 +32,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button buttonMulti;
     private Button buttonDivision;
     private TextView textViewNumber;
-    private Double number1;
-    private Double number2;
-    private Double result;
-    private int ariphmeticOperationCode;
-    private int indexStartNum2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +41,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         initButtonsClickListener();
     }
 
+    // Инициализация пользовательских элементов
     private void initViews() {
         //получим пользовательские элементы по идентификатору
         button0 = findViewById(R.id.button_0);
@@ -70,6 +67,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         textViewNumber = findViewById(R.id.textViewNumber);
     }
 
+    // Устанавливаем слушателей на нажатие кнопок
     private void initButtonsClickListener() {
         button0.setOnClickListener(this);
         button1.setOnClickListener(this);
@@ -98,226 +96,87 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View view) {
         switch (view.getId()) {
             case (R.id.button_0):
-                inputDigit((String) button0.getText());
+                calculator.setInputSimbol((String) button0.getText());
+                textViewNumber.setText(calculator.getTextResult());
                 break;
             case (R.id.button_1):
-                inputDigit((String) button1.getText());
+                calculator.setInputSimbol((String) button1.getText());
+                textViewNumber.setText(calculator.getTextResult());
                 break;
             case (R.id.button_2):
-                inputDigit((String) button2.getText());
+                calculator.setInputSimbol((String) button2.getText());
+                textViewNumber.setText(calculator.getTextResult());
                 break;
             case (R.id.button_3):
-                inputDigit((String) button3.getText());
+                calculator.setInputSimbol((String) button3.getText());
+                textViewNumber.setText(calculator.getTextResult());
                 break;
             case (R.id.button_4):
-                inputDigit((String) button4.getText());
+                calculator.setInputSimbol((String) button4.getText());
+                textViewNumber.setText(calculator.getTextResult());
                 break;
             case (R.id.button_5):
-                inputDigit((String) button5.getText());
+                calculator.setInputSimbol((String) button5.getText());
+                textViewNumber.setText(calculator.getTextResult());
                 break;
             case (R.id.button_6):
-                inputDigit((String) button6.getText());
+                calculator.setInputSimbol((String) button6.getText());
+                textViewNumber.setText(calculator.getTextResult());
                 break;
             case (R.id.button_7):
-                inputDigit((String) button7.getText());
+                calculator.setInputSimbol((String) button7.getText());
+                textViewNumber.setText(calculator.getTextResult());
                 break;
             case (R.id.button_8):
-                inputDigit((String) button8.getText());
+                calculator.setInputSimbol((String) button8.getText());
+                textViewNumber.setText(calculator.getTextResult());
                 break;
             case (R.id.button_9):
-                inputDigit((String) button9.getText());
+                calculator.setInputSimbol((String) button9.getText());
+                textViewNumber.setText(calculator.getTextResult());
                 break;
             case (R.id.button_comma):
-                inputComma();
+                calculator.setInputSimbol((String) buttonComma.getText());
+                textViewNumber.setText(calculator.getTextResult());
                 break;
             case (R.id.button_signChange):
-                inputSignChange();
+                calculator.setInputSimbol((String) buttonSignChange.getText());
+                textViewNumber.setText(calculator.getTextResult());
                 break;
             case (R.id.button_delete):
-                deleteLastSimbol();
+                calculator.setInputSimbol("DEL");
+                textViewNumber.setText(calculator.getTextResult());
                 break;
             case (R.id.button_esc):
-                clearTextViewNumber();
+                calculator.setInputSimbol((String) buttonEsc.getText());
+                textViewNumber.setText(calculator.getTextResult());
                 break;
             case (R.id.button_percent):
-                inputOperation((String) buttonPercent.getText(), 1);
+                calculator.setInputSimbol((String) buttonPercent.getText());
+                textViewNumber.setText(calculator.getTextResult());
                 break;
             case (R.id.button_plus):
-                inputOperation((String) buttonPlus.getText(), 2);
+                calculator.setInputSimbol((String) buttonPlus.getText());
+                textViewNumber.setText(calculator.getTextResult());
                 break;
             case (R.id.button_minus):
-                inputOperation((String) buttonMinus.getText(), 3);
+                calculator.setInputSimbol((String) buttonMinus.getText());
+                textViewNumber.setText(calculator.getTextResult());
                 break;
             case (R.id.button_multi):
-                inputOperation((String) buttonMulti.getText(), 4);
+                calculator.setInputSimbol((String) buttonMulti.getText());
+                textViewNumber.setText(calculator.getTextResult());
                 break;
             case (R.id.button_division):
-                inputOperation((String) buttonDivision.getText(), 5);
+                calculator.setInputSimbol((String) buttonDivision.getText());
+                textViewNumber.setText(calculator.getTextResult());
                 break;
             case (R.id.button_equal):
-                getResult();
+                calculator.setInputSimbol((String) buttonEqual.getText());
+                textViewNumber.setText(calculator.getTextResult());
                 break;
             default:
                 break;
         }
     }
-
-    // Добавить цифру на TextView
-    private void inputDigit(String number) {
-        if(searchSimbolEqual()){
-            clearTextViewNumber();
-        }
-        String s = (String) textViewNumber.getText();
-        textViewNumber.setText(String.format("%s%s", s, number));
-    }
-
-    // Ввод арифметических операций
-    private void inputOperation(String operation, int codeOperation) {
-        try {
-            String s = (String) textViewNumber.getText();
-            number1 = Double.valueOf(s);
-            ariphmeticOperationCode = codeOperation;
-            indexStartNum2 = s.length() + 1;
-            textViewNumber.setText(String.format("%s%s", s, operation));
-        } catch (NumberFormatException e) {
-//            textViewNumber.setText("ERROR");
-            clearTextViewNumber();
-        }
-    }
-
-    // Считаем (нажали "=")
-    private void getResult() {
-        if(searchSimbolEqual()){
-            clearTextViewNumber();
-            return;
-        }
-        String s = (String) textViewNumber.getText();
-        if(s.length()>0 && ariphmeticOperationCode!=0){
-            String s1 = s.substring(indexStartNum2, s.length());
-            number2 = Double.valueOf(s1);
-            switch (ariphmeticOperationCode) {
-                case 1: //Percent
-                    result = number2 / 100.0 * number1;
-                    break;
-                case 2: //Plus
-                    result = number1 + number2;
-                    break;
-                case 3: //Minus
-                    result = number1 - number2;
-                    break;
-                case 4: //Multi
-                    result = number1 * number2;
-                    break;
-                case 5: //Division
-                    result = number1 / number2;
-                    break;
-                default:
-                    break;
-            }
-        }
-        if ((result % 1) != 0) {
-            textViewNumber.setText(String.format(Locale.ROOT, "%s = %s", s, result));
-        } else {
-            textViewNumber.setText(String.format(Locale.ROOT, "%s = %.0f", s, result));
-        }
-    }
-
-    // Установить знак десятичного разделителя
-    private void inputComma() {
-        if(searchSimbolEqual()){
-            clearTextViewNumber();
-        }
-        String s = (String) textViewNumber.getText();
-        if (indexStartNum2 == 0) {
-            if (s.length() == 0) {
-                textViewNumber.setText("0.");
-            } else {
-                int indexComma = s.indexOf(".");
-                if (indexComma == -1) {
-                    textViewNumber.setText(String.format("%s.", s));
-                }
-            }
-        } else {
-            String s1 = s.substring(0, indexStartNum2);
-            String s2 = s.substring(indexStartNum2, s.length());
-            if (s2.length() == 0) {
-                textViewNumber.setText(String.format("%s0.", s1));
-            } else {
-                int indexComma = s2.indexOf(".");
-                if (indexComma == -1) {
-                    textViewNumber.setText(String.format("%s%s.", s1, s2));
-                }
-            }
-        }
-    }
-
-    // Сменить знак числа (с положительного на отрицательное и наоборот)
-    private void inputSignChange() {
-        if(searchSimbolEqual()){
-            clearTextViewNumber();
-        }
-        String s = (String) textViewNumber.getText();
-        Double d1 = 0.0;
-        if ((s.length() != 0)) {
-            if (indexStartNum2 == 0) {
-                d1 = -(Double.valueOf(s));
-                if ((d1 % 1) != 0) {
-                    textViewNumber.setText(String.format(Locale.ROOT, "%s", d1));
-                } else {
-                    textViewNumber.setText(String.format(Locale.ROOT, "%.0f", d1));
-                }
-//                Toast.makeText(getApplicationContext(), textViewNumber.getText(), Toast.LENGTH_SHORT).show();
-            } else {
-                String s1 = s.substring(0, indexStartNum2);
-                String s2 = s.substring(indexStartNum2, s.length());
-                if ((s2.length() != 0) && !s2.equals("-")) {
-                    d1 = -(Double.valueOf(s2));
-                    if ((d1 % 1) != 0) {
-                        textViewNumber.setText(String.format(Locale.ROOT, "%s%s", s1, d1));
-                    } else {
-                        textViewNumber.setText(String.format(Locale.ROOT, "%s%.0f", s1, d1));
-                    }
-                }
-            }
-        }
-    }
-
-    // Удалить последний символ
-    private void deleteLastSimbol() {
-        String s = (String) textViewNumber.getText();
-        if (s.length() > 1) {
-            s = s.substring(0, s.length() - 1);
-            textViewNumber.setText(String.format(Locale.ROOT, "%s", s));
-            if (indexStartNum2 > s.length()) {
-                indexStartNum2 = 0;
-            }
-        } else {
-            textViewNumber.setText("");
-            number1 = 0.0;
-            number2 = 0.0;
-            ariphmeticOperationCode = 0;
-            indexStartNum2 = 0;
-        }
-    }
-
-    // Очистить значение текста на TextView
-    private void clearTextViewNumber() {
-        textViewNumber.setText("");
-        number1 = 0.0;
-        number2 = 0.0;
-        ariphmeticOperationCode = 0;
-        indexStartNum2 = 0;
-    }
-
-    // Поиск знака "="
-    private boolean searchSimbolEqual() {
-        String s = (String) textViewNumber.getText();
-        int indexEqual = s.indexOf("=");
-        if (indexEqual != -1) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-
 }

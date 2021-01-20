@@ -13,4 +13,90 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <style name="MyDigitalButtonStyle" parent="Theme.Android_1_05012021">
+        <item name="android:textSize">@dimen/button_text_size</item>
+        <item name="android:backgroundTint">@color/material_on_surface_emphasis_medium</item>
+        <item name="android:layout_width">@dimen/no_size</item>
+        <item name="android:layout_height">@dimen/no_size</item>
+        <item name="android:layout_margin">@dimen/button_margin</item>
+        <item name="android:insetTop">@dimen/no_size</item>
+        <item name="android:insetBottom">@dimen/no_size</item>
+    </style>
+
+    <style name="MyDigitalButtonStyleLand" parent="Theme.Android_1_05012021">
+        <item name="android:textSize">@dimen/button_text_size_land</item>
+        <item name="android:backgroundTint">@color/material_on_surface_emphasis_medium</item>
+        <item name="android:layout_width">@dimen/no_size</item>
+        <item name="android:layout_height">@dimen/no_size</item>
+        <item name="android:layout_margin">@dimen/button_margin</item>
+        <item name="android:insetTop">@dimen/no_size</item>
+        <item name="android:insetBottom">@dimen/no_size</item>
+    </style>
+
+    <style name="MyOperationButtonStyle" parent="Theme.Android_1_05012021">
+        <item name="android:textSize">@dimen/button_text_size</item>
+        <item name="android:backgroundTint">@color/material_on_surface_disabled</item>
+        <!--        <item name="android:textColor">@color/design_default_color_primary</item>-->
+        <item name="android:layout_width">@dimen/no_size</item>
+        <item name="android:layout_height">@dimen/no_size</item>
+        <item name="android:layout_margin">@dimen/button_margin</item>
+        <item name="android:insetTop">@dimen/no_size</item>
+        <item name="android:insetBottom">@dimen/no_size</item>
+    </style>
+
+    <style name="MyOperationButtonStyleLand" parent="Theme.Android_1_05012021">
+        <item name="android:textSize">@dimen/button_text_size_land</item>
+        <item name="android:backgroundTint">@color/material_on_surface_disabled</item>
+        <!--        <item name="android:textColor">@color/design_default_color_primary</item>-->
+        <item name="android:layout_width">@dimen/no_size</item>
+        <item name="android:layout_height">@dimen/no_size</item>
+        <item name="android:layout_margin">@dimen/button_margin</item>
+        <item name="android:insetTop">@dimen/no_size</item>
+        <item name="android:insetBottom">@dimen/no_size</item>
+    </style>
+
+    <style name="MyEqualButtonStyle" parent="Theme.Android_1_05012021">
+        <item name="android:textSize">@dimen/button_text_size</item>
+        <item name="android:backgroundTint">@android:color/holo_orange_dark</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:layout_width">@dimen/no_size</item>
+        <item name="android:layout_height">@dimen/no_size</item>
+        <item name="android:layout_margin">@dimen/button_margin</item>
+        <item name="android:insetTop">@dimen/no_size</item>
+        <item name="android:insetBottom">@dimen/no_size</item>
+    </style>
+
+    <style name="MyEqualButtonStyleLand" parent="Theme.Android_1_05012021">
+        <item name="android:textSize">@dimen/button_text_size_land</item>
+        <item name="android:backgroundTint">@android:color/holo_orange_dark</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:layout_width">@dimen/no_size</item>
+        <item name="android:layout_height">@dimen/no_size</item>
+        <item name="android:layout_margin">@dimen/button_margin</item>
+        <item name="android:insetTop">@dimen/no_size</item>
+        <item name="android:insetBottom">@dimen/no_size</item>
+    </style>
+
+    <style name="MyEscButtonStyle" parent="Theme.Android_1_05012021">
+        <item name="android:textSize">@dimen/button_text_size</item>
+        <item name="android:backgroundTint">@android:color/holo_red_light</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:layout_width">@dimen/no_size</item>
+        <item name="android:layout_height">@dimen/no_size</item>
+        <item name="android:layout_margin">@dimen/button_margin</item>
+        <item name="android:insetTop">@dimen/no_size</item>
+        <item name="android:insetBottom">@dimen/no_size</item>
+    </style>
+
+    <style name="MyEscButtonStyleLand" parent="Theme.Android_1_05012021">
+        <item name="android:textSize">@dimen/button_text_size_land</item>
+        <item name="android:backgroundTint">@android:color/holo_red_light</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:layout_width">@dimen/no_size</item>
+        <item name="android:layout_height">@dimen/no_size</item>
+        <item name="android:layout_margin">@dimen/button_margin</item>
+        <item name="android:insetTop">@dimen/no_size</item>
+        <item name="android:insetBottom">@dimen/no_size</item>
+    </style>
 </resources>

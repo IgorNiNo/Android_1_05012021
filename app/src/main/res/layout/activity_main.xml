@@ -23,17 +23,10 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/button_esc"
-        android:layout_width="@dimen/no_size"
-        android:layout_height="@dimen/no_size"
-        android:layout_margin="@dimen/button_margin"
-        android:backgroundTint="@android:color/holo_red_light"
-        android:insetTop="@dimen/no_size"
-        android:insetBottom="@dimen/no_size"
+        style="@style/MyEscButtonStyle"
         android:text="@string/button_esc"
-        android:textColor="@color/black"
-        android:textSize="@dimen/button_text_size"
         app:layout_constraintBottom_toTopOf="@+id/button_7"
         app:layout_constraintEnd_toStartOf="@+id/button_signChange"
         app:layout_constraintHorizontal_weight="1"
@@ -41,16 +34,10 @@
         app:layout_constraintTop_toBottomOf="@+id/textViewNumber"
         app:layout_constraintVertical_weight="1" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/button_signChange"
-        android:layout_width="@dimen/no_size"
-        android:layout_height="@dimen/no_size"
-        android:layout_margin="@dimen/button_margin"
-        android:backgroundTint="@color/material_on_surface_disabled"
-        android:insetTop="@dimen/no_size"
-        android:insetBottom="@dimen/no_size"
+        style="@style/MyOperationButtonStyle"
         android:text="@string/button_signChange"
-        android:textSize="@dimen/button_text_size"
         app:layout_constraintBottom_toTopOf="@+id/button_8"
         app:layout_constraintEnd_toStartOf="@+id/button_percent"
         app:layout_constraintHorizontal_weight="1"
@@ -58,16 +45,10 @@
         app:layout_constraintTop_toBottomOf="@+id/textViewNumber"
         app:layout_constraintVertical_weight="1" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/button_percent"
-        android:layout_width="@dimen/no_size"
-        android:layout_height="@dimen/no_size"
-        android:layout_margin="@dimen/button_margin"
-        android:backgroundTint="@color/material_on_surface_disabled"
-        android:insetTop="@dimen/no_size"
-        android:insetBottom="@dimen/no_size"
+        style="@style/MyOperationButtonStyle"
         android:text="@string/button_percent"
-        android:textSize="@dimen/button_text_size"
         app:layout_constraintBottom_toTopOf="@+id/button_9"
         app:layout_constraintEnd_toStartOf="@+id/button_delete"
         app:layout_constraintHorizontal_weight="1"
@@ -75,16 +56,10 @@
         app:layout_constraintTop_toBottomOf="@+id/textViewNumber"
         app:layout_constraintVertical_weight="1" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/button_delete"
-        android:layout_width="@dimen/no_size"
-        android:layout_height="@dimen/no_size"
-        android:layout_margin="@dimen/button_margin"
-        android:backgroundTint="@color/material_on_surface_disabled"
-        android:insetTop="@dimen/no_size"
-        android:insetBottom="@dimen/no_size"
+        style="@style/MyOperationButtonStyle"
         android:text="@string/button_delete"
-        android:textSize="@dimen/button_text_size"
         app:layout_constraintBottom_toTopOf="@+id/button_division"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_weight="1"
@@ -92,16 +67,10 @@
         app:layout_constraintTop_toBottomOf="@+id/textViewNumber"
         app:layout_constraintVertical_weight="1" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/button_7"
-        android:layout_width="@dimen/no_size"
-        android:layout_height="@dimen/no_size"
-        android:layout_margin="@dimen/button_margin"
-        android:backgroundTint="@color/material_on_surface_emphasis_medium"
-        android:insetTop="@dimen/no_size"
-        android:insetBottom="@dimen/no_size"
+        style="@style/MyDigitalButtonStyle"
         android:text="@string/button_7"
-        android:textSize="@dimen/button_text_size"
         app:layout_constraintBottom_toTopOf="@+id/button_4"
         app:layout_constraintEnd_toStartOf="@+id/button_8"
         app:layout_constraintHorizontal_weight="1"
@@ -109,16 +78,10 @@
         app:layout_constraintTop_toBottomOf="@id/button_esc"
         app:layout_constraintVertical_weight="1" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/button_8"
-        android:layout_width="@dimen/no_size"
-        android:layout_height="@dimen/no_size"
-        android:layout_margin="@dimen/button_margin"
-        android:backgroundTint="@color/material_on_surface_emphasis_medium"
-        android:insetTop="@dimen/no_size"
-        android:insetBottom="@dimen/no_size"
+        style="@style/MyDigitalButtonStyle"
         android:text="@string/button_8"
-        android:textSize="@dimen/button_text_size"
         app:layout_constraintBottom_toTopOf="@+id/button_5"
         app:layout_constraintEnd_toStartOf="@+id/button_9"
         app:layout_constraintHorizontal_weight="1"
@@ -126,16 +89,10 @@
         app:layout_constraintTop_toBottomOf="@id/button_signChange"
         app:layout_constraintVertical_weight="1" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/button_9"
-        android:layout_width="@dimen/no_size"
-        android:layout_height="@dimen/no_size"
-        android:layout_margin="@dimen/button_margin"
-        android:backgroundTint="@color/material_on_surface_emphasis_medium"
-        android:insetTop="@dimen/no_size"
-        android:insetBottom="@dimen/no_size"
+        style="@style/MyDigitalButtonStyle"
         android:text="@string/button_9"
-        android:textSize="@dimen/button_text_size"
         app:layout_constraintBottom_toTopOf="@+id/button_6"
         app:layout_constraintEnd_toStartOf="@+id/button_division"
         app:layout_constraintHorizontal_weight="1"
@@ -143,16 +100,10 @@
         app:layout_constraintTop_toBottomOf="@id/button_percent"
         app:layout_constraintVertical_weight="1" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/button_division"
-        android:layout_width="@dimen/no_size"
-        android:layout_height="@dimen/no_size"
-        android:layout_margin="@dimen/button_margin"
-        android:backgroundTint="@color/material_on_surface_disabled"
-        android:insetTop="@dimen/no_size"
-        android:insetBottom="@dimen/no_size"
+        style="@style/MyOperationButtonStyle"
         android:text="@string/button_division"
-        android:textSize="@dimen/button_text_size"
         app:layout_constraintBottom_toTopOf="@+id/button_multi"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_weight="1"
@@ -160,16 +111,10 @@
         app:layout_constraintTop_toBottomOf="@id/button_delete"
         app:layout_constraintVertical_weight="1" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/button_4"
-        android:layout_width="@dimen/no_size"
-        android:layout_height="@dimen/no_size"
-        android:layout_margin="@dimen/button_margin"
-        android:backgroundTint="@color/material_on_surface_emphasis_medium"
-        android:insetTop="@dimen/no_size"
-        android:insetBottom="@dimen/no_size"
+        style="@style/MyDigitalButtonStyle"
         android:text="@string/button_4"
-        android:textSize="@dimen/button_text_size"
         app:layout_constraintBottom_toTopOf="@+id/button_1"
         app:layout_constraintEnd_toStartOf="@+id/button_5"
         app:layout_constraintHorizontal_weight="1"
@@ -177,16 +122,10 @@
         app:layout_constraintTop_toBottomOf="@id/button_7"
         app:layout_constraintVertical_weight="1" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/button_5"
-        android:layout_width="@dimen/no_size"
-        android:layout_height="@dimen/no_size"
-        android:layout_margin="@dimen/button_margin"
-        android:backgroundTint="@color/material_on_surface_emphasis_medium"
-        android:insetTop="@dimen/no_size"
-        android:insetBottom="@dimen/no_size"
+        style="@style/MyDigitalButtonStyle"
         android:text="@string/button_5"
-        android:textSize="@dimen/button_text_size"
         app:layout_constraintBottom_toTopOf="@+id/button_2"
         app:layout_constraintEnd_toStartOf="@+id/button_6"
         app:layout_constraintHorizontal_weight="1"
@@ -194,16 +133,10 @@
         app:layout_constraintTop_toBottomOf="@id/button_8"
         app:layout_constraintVertical_weight="1" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/button_6"
-        android:layout_width="@dimen/no_size"
-        android:layout_height="@dimen/no_size"
-        android:layout_margin="@dimen/button_margin"
-        android:backgroundTint="@color/material_on_surface_emphasis_medium"
-        android:insetTop="@dimen/no_size"
-        android:insetBottom="@dimen/no_size"
+        style="@style/MyDigitalButtonStyle"
         android:text="@string/button_6"
-        android:textSize="@dimen/button_text_size"
         app:layout_constraintBottom_toTopOf="@+id/button_3"
         app:layout_constraintEnd_toStartOf="@+id/button_multi"
         app:layout_constraintHorizontal_weight="1"
@@ -211,16 +144,10 @@
         app:layout_constraintTop_toBottomOf="@id/button_9"
         app:layout_constraintVertical_weight="1" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/button_multi"
-        android:layout_width="@dimen/no_size"
-        android:layout_height="@dimen/no_size"
-        android:layout_margin="@dimen/button_margin"
-        android:backgroundTint="@color/material_on_surface_disabled"
-        android:insetTop="@dimen/no_size"
-        android:insetBottom="@dimen/no_size"
+        style="@style/MyOperationButtonStyle"
         android:text="@string/button_multi"
-        android:textSize="@dimen/button_text_size"
         app:layout_constraintBottom_toTopOf="@+id/button_minus"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_weight="1"
@@ -228,16 +155,10 @@
         app:layout_constraintTop_toBottomOf="@id/button_division"
         app:layout_constraintVertical_weight="1" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/button_1"
-        android:layout_width="@dimen/no_size"
-        android:layout_height="@dimen/no_size"
-        android:layout_margin="@dimen/button_margin"
-        android:backgroundTint="@color/material_on_surface_emphasis_medium"
-        android:insetTop="@dimen/no_size"
-        android:insetBottom="@dimen/no_size"
+        style="@style/MyDigitalButtonStyle"
         android:text="@string/button_1"
-        android:textSize="@dimen/button_text_size"
         app:layout_constraintBottom_toTopOf="@+id/button_0"
         app:layout_constraintEnd_toStartOf="@+id/button_2"
         app:layout_constraintHorizontal_weight="1"
@@ -245,16 +166,10 @@
         app:layout_constraintTop_toBottomOf="@id/button_4"
         app:layout_constraintVertical_weight="1" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/button_2"
-        android:layout_width="@dimen/no_size"
-        android:layout_height="@dimen/no_size"
-        android:layout_margin="@dimen/button_margin"
-        android:backgroundTint="@color/material_on_surface_emphasis_medium"
-        android:insetTop="@dimen/no_size"
-        android:insetBottom="@dimen/no_size"
+        style="@style/MyDigitalButtonStyle"
         android:text="@string/button_2"
-        android:textSize="@dimen/button_text_size"
         app:layout_constraintBottom_toTopOf="@+id/button_comma"
         app:layout_constraintEnd_toStartOf="@+id/button_3"
         app:layout_constraintHorizontal_weight="1"
@@ -262,16 +177,10 @@
         app:layout_constraintTop_toBottomOf="@id/button_5"
         app:layout_constraintVertical_weight="1" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/button_3"
-        android:layout_width="@dimen/no_size"
-        android:layout_height="@dimen/no_size"
-        android:layout_margin="@dimen/button_margin"
-        android:backgroundTint="@color/material_on_surface_emphasis_medium"
-        android:insetTop="@dimen/no_size"
-        android:insetBottom="@dimen/no_size"
+        style="@style/MyDigitalButtonStyle"
         android:text="@string/button_3"
-        android:textSize="@dimen/button_text_size"
         app:layout_constraintBottom_toTopOf="@+id/button_equal"
         app:layout_constraintEnd_toStartOf="@+id/button_minus"
         app:layout_constraintHorizontal_weight="1"
@@ -279,16 +188,10 @@
         app:layout_constraintTop_toBottomOf="@id/button_6"
         app:layout_constraintVertical_weight="1" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/button_minus"
-        android:layout_width="@dimen/no_size"
-        android:layout_height="@dimen/no_size"
-        android:layout_margin="@dimen/button_margin"
-        android:backgroundTint="@color/material_on_surface_disabled"
-        android:insetTop="@dimen/no_size"
-        android:insetBottom="@dimen/no_size"
+        style="@style/MyOperationButtonStyle"
         android:text="@string/button_minus"
-        android:textSize="@dimen/button_text_size"
         app:layout_constraintBottom_toTopOf="@+id/button_plus"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_weight="1"
@@ -296,16 +199,10 @@
         app:layout_constraintTop_toBottomOf="@id/button_multi"
         app:layout_constraintVertical_weight="1" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/button_0"
-        android:layout_width="@dimen/no_size"
-        android:layout_height="@dimen/no_size"
-        android:layout_margin="@dimen/button_margin"
-        android:backgroundTint="@color/material_on_surface_emphasis_medium"
-        android:insetTop="@dimen/no_size"
-        android:insetBottom="@dimen/no_size"
+        style="@style/MyDigitalButtonStyle"
         android:text="@string/button_0"
-        android:textSize="@dimen/button_text_size"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/button_comma"
         app:layout_constraintHorizontal_weight="1"
@@ -313,16 +210,10 @@
         app:layout_constraintTop_toBottomOf="@id/button_1"
         app:layout_constraintVertical_weight="1" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/button_comma"
-        android:layout_width="@dimen/no_size"
-        android:layout_height="@dimen/no_size"
-        android:layout_margin="@dimen/button_margin"
-        android:backgroundTint="@color/material_on_surface_disabled"
-        android:insetTop="@dimen/no_size"
-        android:insetBottom="@dimen/no_size"
+        style="@style/MyOperationButtonStyle"
         android:text="@string/button_comma"
-        android:textSize="@dimen/button_text_size"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/button_equal"
         app:layout_constraintHorizontal_weight="1"
@@ -330,17 +221,10 @@
         app:layout_constraintTop_toBottomOf="@id/button_2"
         app:layout_constraintVertical_weight="1" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/button_equal"
-        android:layout_width="@dimen/no_size"
-        android:layout_height="@dimen/no_size"
-        android:layout_margin="@dimen/button_margin"
-        android:backgroundTint="@android:color/holo_orange_dark"
-        android:insetTop="@dimen/no_size"
-        android:insetBottom="@dimen/no_size"
+        style="@style/MyEqualButtonStyle"
         android:text="@string/button_equal"
-        android:textColor="@color/black"
-        android:textSize="@dimen/button_text_size"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/button_plus"
         app:layout_constraintHorizontal_weight="1"
@@ -348,16 +232,10 @@
         app:layout_constraintTop_toBottomOf="@id/button_3"
         app:layout_constraintVertical_weight="1" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/button_plus"
-        android:layout_width="@dimen/no_size"
-        android:layout_height="@dimen/no_size"
-        android:layout_margin="@dimen/button_margin"
-        android:backgroundTint="@color/material_on_surface_disabled"
-        android:insetTop="@dimen/no_size"
-        android:insetBottom="@dimen/no_size"
+        style="@style/MyOperationButtonStyle"
         android:text="@string/button_plus"
-        android:textSize="@dimen/button_text_size"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_weight="1"

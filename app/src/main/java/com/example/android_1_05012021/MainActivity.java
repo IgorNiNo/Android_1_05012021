@@ -9,7 +9,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-    Calculator calculator = new Calculator();
+    private Calculator calculator = new Calculator();
     private final static String KEY_CALCULATOR = "KEY_CALCULATOR";
     private Button button0;
     private Button button1;

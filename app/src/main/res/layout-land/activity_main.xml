@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/water"
-    android:paddingEnd="300dp"
+    android:paddingEnd="@dimen/padding_layout_land"
     tools:context=".MainActivity">
 
     <TextView

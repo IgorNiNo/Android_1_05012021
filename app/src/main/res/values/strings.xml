@@ -20,4 +20,5 @@
     <string name="button_signChange" translatable="false">+/-</string>
     <string name="button_percent" translatable="false">%</string>
     <string name="button_delete" translatable="false">&#x232B;</string>
+    <string name="dark_theme">Dark Theme</string>
 </resources>

@@ -8,12 +8,22 @@
     android:paddingEnd="@dimen/padding_layout_land"
     tools:context=".MainActivity">
 
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_settings"
+        style="@style/MyDigitalButtonStyleLand"
+        android:layout_width="@dimen/button_size_land"
+        android:layout_height="@dimen/button_size_land"
+        android:background="@android:drawable/ic_menu_manage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/textViewNumber"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/button_margin"
-        android:layout_marginTop="@dimen/margin_top"
         android:layout_marginEnd="@dimen/button_margin"
         android:background="@color/white"
         android:ems="15"
@@ -22,7 +32,7 @@
         android:textSize="@dimen/text_size_land"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/button_settings" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/button_esc"
@@ -61,6 +71,7 @@
         android:id="@+id/button_delete"
         style="@style/MyOperationButtonStyleLand"
         android:text="@string/button_delete"
+
         app:layout_constraintBottom_toTopOf="@+id/button_division"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_weight="1"

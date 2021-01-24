@@ -1,16 +1,19 @@
 package com.example.android_1_05012021;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
+import androidx.annotation.Nullable;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class MainActivity extends BaseActivity implements View.OnClickListener {
     private Calculator calculator = new Calculator();
     private final static String KEY_CALCULATOR = "KEY_CALCULATOR";
+    private final static String APP_THEME = "APP_THEME";
+    private final static int REQUEST_CODE = 99;
     private Button button0;
     private Button button1;
     private Button button2;
@@ -32,10 +35,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button buttonMulti;
     private Button buttonDivision;
     private TextView textViewNumber;
+    private Button buttonSettings;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTheme(getCodeStyle(R.style.AppTheme));
         setContentView(R.layout.activity_main);
         initViews();
         initButtonsClickListener();
@@ -78,6 +83,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         buttonMulti = findViewById(R.id.button_multi);
         buttonDivision = findViewById(R.id.button_division);
         textViewNumber = findViewById(R.id.textViewNumber);
+        buttonSettings = findViewById(R.id.button_settings);
     }
 
     // Устанавливаем слушателей на нажатие кнопок
@@ -103,6 +109,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         buttonMulti.setOnClickListener(this);
         buttonDivision.setOnClickListener(this);
         textViewNumber.setOnClickListener(this);
+        buttonSettings.setOnClickListener(this);
     }
 
     @Override
@@ -188,8 +195,31 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 calculator.setInputSimbol((String) buttonEqual.getText());
                 textViewNumber.setText(calculator.getTextResult());
                 break;
+            case (R.id.button_settings):
+                startSettingsActivity();
+                break;
             default:
                 break;
+        }
+    }
+
+    private void startSettingsActivity() {
+        // Чтобы стартовать активити, надо подготовить интент
+        // В данном случае это будет явный интент, поскольку здесь передаётся класс активити
+        Intent runSettings = new Intent(MainActivity.this, SettingsActivity.class);
+        // Метод стартует активити, указанную в интенте
+        startActivityForResult(runSettings, REQUEST_CODE);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode != REQUEST_CODE) {
+            super.onActivityResult(requestCode, resultCode, data);
+            return;
+        }
+        if (resultCode == RESULT_OK) {
+            recreate();
         }
     }
 }

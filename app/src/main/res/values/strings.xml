@@ -1,3 +1,19 @@
 <resources>
     <string name="app_name">The Notes</string>
+    <string name="notes_fragment">Notes fragment</string>
+    <string name="note_1">Note_1</string>
+    <string name="note_2">Note_2</string>
+    <string name="note_3">Note_3</string>
+    <string name="description_1">Description_1</string>
+    <string name="description_2">Description_2</string>
+    <string name="description_3">Description_3</string>
+    <string name="comment_1">Comment_1</string>
+    <string name="comment_2">Comment_2</string>
+    <string name="comment_3">Comment_3</string>
+    <string name="status_1">Status_1</string>
+    <string name="status_2">Status_2</string>
+    <string name="status_3">Status_3</string>
+    <string name="dateOfCreation_1">Date Of Creation_1</string>
+    <string name="dateOfCreation_2">Date Of Creation_2</string>
+    <string name="dateOfCreation_3">Date Of Creation_3</string>
 </resources>

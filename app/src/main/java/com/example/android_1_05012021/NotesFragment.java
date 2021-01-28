@@ -1,5 +1,6 @@
 package com.example.android_1_05012021;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -50,14 +51,29 @@ public class NotesFragment extends Fragment {
 
         // В этом цикле создаём элемент TextView, заполняем его значениями и добавляем на экран.
         // Кроме того, создаём обработку касания на элемент
-        for(int i=0; i < notesView.length; i++){
+        for (int i = 0; i < notesView.length; i++) {
             String note = notesView[i].getName();
             TextView tv = new TextView(getContext());
             tv.setText(note);
             tv.setTextSize(30);
             layoutView.addView(tv);
+            final int fi = i;
+            tv.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    showPortListOfNote(fi);
+                }
+            });
         }
     }
 
-
+    // Показать заметку в портретной ориентации.
+    private void showPortListOfNote(int index) {
+        // Откроем вторую activity
+        Intent intent = new Intent();
+        intent.setClass(getActivity(), ListOfNoteActivity.class);
+        // и передадим туда параметры
+        intent.putExtra(ListOfNoteFragment.ARG_INDEX, index);
+        startActivity(intent);
+    }
 }

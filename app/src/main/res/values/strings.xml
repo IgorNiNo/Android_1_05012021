@@ -16,4 +16,6 @@
     <string name="dateOfCreation_1">Date Of Creation_1</string>
     <string name="dateOfCreation_2">Date Of Creation_2</string>
     <string name="dateOfCreation_3">Date Of Creation_3</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

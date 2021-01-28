@@ -5,7 +5,7 @@
     android:layout_height="match_parent">
 
     <fragment
-        android:id="@+id/notes"
+        android:id="@+id/fragment_notes"
         android:name="com.example.android_1_05012021.NotesFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />

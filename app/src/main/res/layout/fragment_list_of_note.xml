@@ -10,7 +10,8 @@
         android:id="@+id/textName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@array/name" />
+        android:text="@array/name"
+        android:textSize="@dimen/text_size" />
 
     <EditText
         android:id="@+id/editTextDescription"
@@ -18,7 +19,8 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="text"
-        android:text="@array/description" />
+        android:text="@array/description"
+        android:textSize="@dimen/text_size" />
 
     <EditText
         android:id="@+id/editTextComment"
@@ -26,7 +28,8 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="text"
-        android:text="@array/comment" />
+        android:text="@array/comment"
+        android:textSize="@dimen/text_size" />
 
     <EditText
         android:id="@+id/editTextStatus"
@@ -34,12 +37,14 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="text"
-        android:text="@array/status" />
+        android:text="@array/status"
+        android:textSize="@dimen/text_size" />
 
     <EditText
         android:id="@+id/editTextDateOfDescription"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="text" />
+        android:inputType="text"
+        android:textSize="@dimen/text_size" />
 </LinearLayout>

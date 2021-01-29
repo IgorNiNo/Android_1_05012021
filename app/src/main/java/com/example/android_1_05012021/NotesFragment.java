@@ -16,14 +16,10 @@ import android.widget.TextView;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
-/*
- * A simple {@link Fragment} subclass.
- * Use the {@link NotesFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+
 public class NotesFragment extends Fragment {
 
-    private Notes[] notesView;
+    protected static Notes[] notesView;
 
     // При создании фрагмента укажем его макет
     @Override
@@ -42,7 +38,6 @@ public class NotesFragment extends Fragment {
     // создаём список городов на экране из массива в ресурсах
     private void initList(View view) {
         LinearLayout layoutView = (LinearLayout) view;
-//        String[] notesView = getResources().getStringArray(R.array.cities);
         notesView = new Notes[]{
                 new Notes(getString(R.string.note_1), getString(R.string.description_1), getString(R.string.comment_1), getString(R.string.status_1), new SimpleDateFormat("HH:mm:ss_dd/MM/yyyy").format(Calendar.getInstance().getTime())),
                 new Notes(getString(R.string.note_2), getString(R.string.description_2), getString(R.string.comment_2), getString(R.string.status_2), new SimpleDateFormat("HH:mm:ss_dd/MM/yyyy").format(Calendar.getInstance().getTime())),

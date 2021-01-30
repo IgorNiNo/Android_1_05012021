@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Заметки</string>
+    <string name="notes_fragment">Фрагмент заметки</string>
+    <string name="note_1">Заметка_1</string>
+    <string name="note_2">Заметка_2</string>
+    <string name="note_3">Заметка_3</string>
+    <string name="description_1">Описание_1</string>
+    <string name="description_2">Описание_2</string>
+    <string name="description_3">Описание_3</string>
+    <string name="comment_1">Комментарий_1</string>
+    <string name="comment_2">Комментарий_2</string>
+    <string name="comment_3">Комментарий_3</string>
+    <string name="status_1">Статус_1</string>
+    <string name="status_2">Статус_2</string>
+    <string name="status_3">Статус_3</string>
+    <string name="dateOfCreation_1">Дата создания_1</string>
+    <string name="dateOfCreation_2">Дата создания_2</string>
+    <string name="dateOfCreation_3">Дата создания_3</string>
+</resources>

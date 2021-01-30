@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="name">
+        <item>@string/note_1</item>
+        <item>@string/note_2</item>
+        <item>@string/note_3</item>
+    </string-array>
+
+    <string-array name="description">
+        <item>@string/description_1</item>
+        <item>@string/description_2</item>
+        <item>@string/description_3</item>
+    </string-array>
+
+    <string-array name="comment">
+        <item>@string/comment_1</item>
+        <item>@string/comment_2</item>
+        <item>@string/comment_3</item>
+    </string-array>
+
+    <string-array name="status">
+        <item>@string/status_1</item>
+        <item>@string/status_2</item>
+        <item>@string/status_3</item>
+    </string-array>
+
+    <string-array name="dateOfCreation">
+        <item>@string/dateOfCreation_1</item>
+        <item>@string/dateOfCreation_2</item>
+        <item>@string/dateOfCreation_3</item>
+    </string-array>
+</resources>

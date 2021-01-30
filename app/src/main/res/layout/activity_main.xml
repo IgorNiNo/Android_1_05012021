@@ -1,12 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?><!-- это макет для портретной ориентации-->
+<?xml version="1.0" encoding="utf-8"?>
+<!-- это макет для портретной ориентации-->
 <!-- в портретной ориентации у activity только один фрагмент -->
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+<FrameLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id = "@+id/fragment_container"
+    android:layout_width = "match_parent"
+    android:layout_height = "match_parent" >
 
-    <fragment
-        android:id="@+id/fragment_notes"
-        android:name="com.example.android_1_05012021.NotesFragment"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-</FrameLayout>
+</FrameLayout >

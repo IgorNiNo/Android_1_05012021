@@ -113,18 +113,21 @@ public class NotesFragment extends Fragment {
         // Выполняем транзакцию по замене фрагмента
         FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.replace(R.id.fragment_list_of_note, detail);  // замена фрагмента
+        fragmentTransaction.replace(R.id.fragment_container_land, detail);  // замена фрагмента
         fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
         fragmentTransaction.commit();
     }
 
     // Показать заметку в портретной ориентации.
     private void showPortListOfNote(Notes currentNote) {
-        // Откроем вторую activity
-        Intent intent = new Intent();
-        intent.setClass(getActivity(), ListOfNoteActivity.class);
-        // и передадим туда параметры
-        intent.putExtra(ListOfNoteFragment.ARG_NOTE, currentNote);
-        startActivity(intent);
+        // Создаём новый фрагмент с текущей позицией для вывода заметки
+        ListOfNoteFragment detail = ListOfNoteFragment.newInstance(currentNote);
+        // Выполняем транзакцию по замене фрагмента
+        FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.replace(R.id.fragment_container, detail);  // замена фрагмента
+        fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+        fragmentTransaction.commit();
     }
 }

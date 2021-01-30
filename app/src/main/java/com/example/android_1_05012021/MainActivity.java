@@ -10,5 +10,15 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-    }
+         if (savedInstanceState == null) {
+             // Если эта activity запускается первый раз (с каждой новой заметкой первый раз),
+             // то перенаправим параметр фрагменту
+             NotesFragment details = new NotesFragment();
+             details.setArguments(getIntent().getExtras());
+             // Добавим фрагмент на activity
+             getSupportFragmentManager()
+                     .beginTransaction()
+                     .replace(R.id.fragment_container, details).commit();
+         }
+     }
 }

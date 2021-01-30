@@ -1,22 +1,20 @@
-<?xml version="1.0" encoding="utf-8"?><!-- это макет для альбомной ориентации -->
+<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="horizontal">
+    android:orientation="horizontal"
+    tools:context=".MainActivity">
 
-    <!-- Фрагмент со списком заметок -->
-    <fragment
-        android:id="@+id/fragment_notes"
-        android:name="com.example.android_1_05012021.NotesFragment"
-        android:layout_width="0px"
-        android:layout_height="match_parent"
-        android:layout_weight="1" />
-
-    <!-- Здесь будет выбранная заметка -->
     <FrameLayout
-        android:id="@+id/fragment_list_of_note"
-        android:layout_width="0px"
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:background="?android:attr/detailsElementBackground" />
+        android:layout_weight="1"></FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/fragment_container_land"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"></FrameLayout>
 </LinearLayout>

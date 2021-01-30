@@ -13,7 +13,6 @@ public class ListOfNoteActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_of_note);
 
-
         if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {
             // Если устройство перевернули в альбомную ориентацию, то надо эту activity закрыть
             finish();
@@ -21,7 +20,7 @@ public class ListOfNoteActivity extends AppCompatActivity {
         }
 
         if (savedInstanceState == null) {
-            // Если эта activity запускается первый раз (с каждым новой заметкой первый раз),
+            // Если эта activity запускается первый раз (с каждой новой заметкой первый раз),
             // то перенаправим параметр фрагменту
             ListOfNoteFragment details = new ListOfNoteFragment();
             details.setArguments(getIntent().getExtras());

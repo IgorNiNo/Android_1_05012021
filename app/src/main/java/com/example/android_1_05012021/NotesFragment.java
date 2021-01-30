@@ -19,11 +19,11 @@ import android.widget.TextView;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
-
 public class NotesFragment extends Fragment {
 
+    public static final String CURRENT_NOTE = "CurrentNote";
+    private Notes currentNote;
     private boolean isLandscape;
-    protected static Notes[] notesView;
 
     // При создании фрагмента укажем его макет
     @Override
@@ -39,19 +39,15 @@ public class NotesFragment extends Fragment {
         initList(view);
     }
 
-    // создаём список городов на экране из массива в ресурсах
+    // создаём список заметок на экране из массива в ресурсах
     private void initList(View view) {
         LinearLayout layoutView = (LinearLayout) view;
-        notesView = new Notes[]{
-                new Notes(getString(R.string.note_1), getString(R.string.description_1), getString(R.string.comment_1), getString(R.string.status_1), new SimpleDateFormat("HH:mm:ss_dd/MM/yyyy").format(Calendar.getInstance().getTime())),
-                new Notes(getString(R.string.note_2), getString(R.string.description_2), getString(R.string.comment_2), getString(R.string.status_2), new SimpleDateFormat("HH:mm:ss_dd/MM/yyyy").format(Calendar.getInstance().getTime())),
-                new Notes(getString(R.string.note_3), getString(R.string.description_3), getString(R.string.comment_3), getString(R.string.status_3), new SimpleDateFormat("HH:mm:ss_dd/MM/yyyy").format(Calendar.getInstance().getTime()))
-        };
+        String[] notes = getResources().getStringArray(R.array.name);
 
         // В этом цикле создаём элемент TextView, заполняем его значениями и добавляем на экран.
         // Кроме того, создаём обработку касания на элемент
-        for (int i = 0; i < notesView.length; i++) {
-            String note = notesView[i].getName();
+        for (int i = 0; i < notes.length; i++) {
+            String note = notes[i];
             TextView tv = new TextView(getContext());
             tv.setText(note);
             tv.setTextSize(30);
@@ -60,10 +56,22 @@ public class NotesFragment extends Fragment {
             tv.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    showListOfNote(fi);
+                    currentNote = new Notes(getResources().getStringArray(R.array.name)[fi],
+                            getResources().getStringArray(R.array.description)[fi],
+                            getResources().getStringArray(R.array.comment)[fi],
+                            getResources().getStringArray(R.array.status)[fi],
+                            new SimpleDateFormat("HH:mm:ss  dd/MM/yyyy").format(Calendar.getInstance().getTime()));
+                    showListOfNote(currentNote);
                 }
             });
         }
+    }
+
+    // Сохраним текущую позицию (вызывается перед выходом из фрагмента)
+    @Override
+    public void onSaveInstanceState(@NonNull Bundle outState) {
+        outState.putParcelable(CURRENT_NOTE, currentNote);
+        super.onSaveInstanceState(outState);
     }
 
     // activity создана, можно к ней обращаться. Выполним начальные действия
@@ -72,24 +80,36 @@ public class NotesFragment extends Fragment {
         super.onActivityCreated(savedInstanceState);
         // Определение, можно ли будет расположить рядом заметку в другом фрагменте
         isLandscape = getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE;
+        // Если это не первое создание, то восстановим текущую позицию
+        if (savedInstanceState != null) {
+            // Восстановление текущей позиции.
+            currentNote = savedInstanceState.getParcelable(CURRENT_NOTE);
+        } else {
+            // Если восстановить не удалось, то сделаем объект с первым индексом
+            currentNote = new Notes(getResources().getStringArray(R.array.name)[0],
+                    getResources().getStringArray(R.array.description)[0],
+                    getResources().getStringArray(R.array.comment)[0],
+                    getResources().getStringArray(R.array.status)[0],
+                    new SimpleDateFormat("HH:mm:ss  dd/MM/yyyy").format(Calendar.getInstance().getTime()));
+        }
         // Если можно нарисовать рядом заметку, то сделаем это
         if (isLandscape) {
-            showLandListOfNote(0);
+            showLandListOfNote(currentNote);
         }
     }
 
-    private void showListOfNote(int index) {
+    private void showListOfNote(Notes currentNote) {
         if (isLandscape) {
-            showLandListOfNote(index);
+            showLandListOfNote(currentNote);
         } else {
-            showPortListOfNote(index);
+            showPortListOfNote(currentNote);
         }
     }
 
     // Показать заметку в ландшафтной ориентации
-    private void showLandListOfNote(int index) {
+    private void showLandListOfNote(Notes currentNote) {
         // Создаём новый фрагмент с текущей позицией для вывода заметки
-        ListOfNoteFragment detail = ListOfNoteFragment.newInstance(index);
+        ListOfNoteFragment detail = ListOfNoteFragment.newInstance(currentNote);
         // Выполняем транзакцию по замене фрагмента
         FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
@@ -99,12 +119,12 @@ public class NotesFragment extends Fragment {
     }
 
     // Показать заметку в портретной ориентации.
-    private void showPortListOfNote(int index) {
+    private void showPortListOfNote(Notes currentNote) {
         // Откроем вторую activity
         Intent intent = new Intent();
         intent.setClass(getActivity(), ListOfNoteActivity.class);
         // и передадим туда параметры
-        intent.putExtra(ListOfNoteFragment.ARG_INDEX, index);
+        intent.putExtra(ListOfNoteFragment.ARG_NOTE, currentNote);
         startActivity(intent);
     }
 }

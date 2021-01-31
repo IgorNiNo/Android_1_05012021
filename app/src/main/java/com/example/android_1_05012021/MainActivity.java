@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
             // Добавим фрагмент на activity
             getSupportFragmentManager()
                     .beginTransaction()
-                    .replace(R.id.fragment_container, details).commit();
+                    .replace(R.id.fragment_container, details).commitAllowingStateLoss();
         }
     }
 
@@ -45,17 +45,17 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private boolean navigateFragment(int id) {
-//        switch (id) {
-//            case R.id.action_settings:
-//                addFragment(new SettingsFragment());
-//                return true;
-//            case R.id.action_main:
-//                addFragment(new MainFragment());
-//                return true;
-//            case R.id.action_favorite:
-//                addFragment(new FavoriteFragment());
-//                return true;
-//        }
+        switch (id) {
+            case R.id.action_add:
+                Toast.makeText(MainActivity.this, getString(R.string.add), Toast.LENGTH_SHORT).show();
+                return true;
+            case R.id.action_settings:
+                Toast.makeText(MainActivity.this, getString(R.string.settings), Toast.LENGTH_SHORT).show();
+                return true;
+            case R.id.action_about:
+                Toast.makeText(MainActivity.this, getString(R.string.about), Toast.LENGTH_SHORT).show();
+                return true;
+        }
         return false;
     }
 

@@ -19,7 +19,7 @@
         <item name="windowNoTitle">true</item>
     </style>
 
-    <style name="Theme.Android_1_05012021.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style name="Theme.Android_1_05012021.AppBarOverlay" parent="ThemeOverlay.MaterialComponents.Dark.ActionBar" />
 
-    <style name="Theme.Android_1_05012021.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+    <style name="Theme.Android_1_05012021.PopupOverlay" parent="ThemeOverlay.MaterialComponents.Light" />
 </resources>

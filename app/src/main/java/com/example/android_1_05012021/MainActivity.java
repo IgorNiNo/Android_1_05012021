@@ -1,5 +1,7 @@
 package com.example.android_1_05012021;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -9,6 +11,10 @@ import android.widget.Toast;
 
 import androidx.appcompat.widget.SearchView;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
+
+import com.google.android.material.navigation.NavigationView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -16,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        initToolbar();
+        initMenus();
         if (savedInstanceState == null) {
             // Если эта activity запускается первый раз (с каждой новой заметкой первый раз),
             // то перенаправим параметр фрагменту
@@ -29,9 +35,38 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private void initToolbar() {
+    private void initMenus() {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        initDrawer(toolbar);
+    }
+
+    // регистрация drawer
+    private void initDrawer(Toolbar toolbar) {
+        final DrawerLayout drawer = findViewById(R.id.drawer_layout);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+                this, drawer, toolbar,
+                R.string.navigation_drawer_open,
+                R.string.navigation_drawer_close);
+        drawer.addDrawerListener(toggle);
+        toggle.syncState();
+        // Обработка навигационного меню
+        NavigationView navigationView = findViewById(R.id.nav_view);
+        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                int id = item.getItemId();
+                switch (id) {
+                    case R.id.action_settings:
+                        Toast.makeText(MainActivity.this, "Memu Drawer: " + getString(R.string.settings), Toast.LENGTH_SHORT).show();
+                        return true;
+                    case R.id.action_about:
+                        Toast.makeText(MainActivity.this, "Memu Drawer: " + getString(R.string.about), Toast.LENGTH_SHORT).show();
+                        return true;
+                }
+                return false;
+            }
+        });
     }
 
     @Override
